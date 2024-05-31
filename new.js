@@ -33,9 +33,12 @@ boxes.forEach((box) => {
     box.disabled = true;
     count++;
     console.log(count);
+    
+    let isWinner = checkWinner();
 
-    if(count == 9){
-    drawWinner();
+
+    if(count === 9  && !isWinner){
+      drawWinner();
     }
     else{
       checkWinner();
@@ -56,7 +59,7 @@ const showWinner = (winner) => {
 };
 
 
-const drawWinner = (winner) => {
+const drawWinner = (_winner) => {
   msg.innerText = `Match Draw!!`;
   mesContainer.classList.remove("hide");
 };
